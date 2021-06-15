@@ -1,0 +1,30 @@
+<h1>Recipes</h1>
+
+
+
+<table>
+  <thead>
+    <tr >
+      <th class=" px-4">Title</th>
+      <th class=" px-4">Description</th>
+      <th class=" px-4">Ingredients</th>
+      <th class=" px-4">Directions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+<% @recipes.each do |recipe| %>
+  <tr class="text-center">
+    <td><%= recipe.title %></td>
+    <td><%= recipe.description %></td>
+    <td><%= recipe.ingredients %></td>
+    <td><%= recipe.directions%></td>
+    <td ><%= button_to 'Show', recipe_path(:id => recipe.id), :method => :get, :class => "btn btn-warning btn-sm"%></td>
+<td><%= button_to 'Edit', edit_recipe_path(:id => recipe.id), :method => :get, :class => "btn btn-warning btn-sm" %></td>
+    <td><%= button_to 'Destroy', recipe_path(:id => recipe.id), :method => :delete, :class => "btn btn-warning btn-sm" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>

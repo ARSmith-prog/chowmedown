@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @dog.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_dog_path(@dog), :class => "btn btn-primary btn-sm" %>
+<%= link_to 'Back', dogs_path, :class => "btn btn-primary btn-sm" %>
