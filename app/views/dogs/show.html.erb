@@ -10,6 +10,11 @@
   <%= @dog.age %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @dog.user.username %>
+</p>
+
 
 <%= link_to 'Edit', edit_dog_path(@dog), :class => "btn btn-primary btn-sm" %>
 <%= link_to 'Back', dogs_path, :class => "btn btn-primary btn-sm" %>

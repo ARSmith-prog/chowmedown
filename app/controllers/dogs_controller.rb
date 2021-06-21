@@ -1,5 +1,7 @@
 class DogsController < ApplicationController
     before_action :set_dog, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user, except: [:show , :index]
+
 
 
   def index
@@ -18,6 +20,7 @@ class DogsController < ApplicationController
 
   def create
   @dog = Dog.new(dog_params)
+  @dog.user = current_user
 
   respond_to do |format|
     if @dog.save
