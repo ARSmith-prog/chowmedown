@@ -1,9 +1,8 @@
 class RecipesController < ApplicationController
-      before_action :set_recipes, only: [:show, :edit, :update, :destroy]
+      before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   def index
       @recipes = Recipe.all
   end
-end
 
 def new
   @recipe = Recipe.new
@@ -11,7 +10,7 @@ end
 
 
 def show
-  end
+end
 
 
 def edit
@@ -62,4 +61,5 @@ end
 # Never trust parameters from the scary internet, only allow the white list through.
 def recipe_params
   params.require(:recipe).permit(:title, :description, :ingredients, :directions)
+end
 end

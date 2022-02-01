@@ -1,0 +1,7 @@
+<div>
+  <strong><%= comment.name %> says:</strong>
+  <%=comment.content %>
+    <div class="comment-admin">
+    <%= link_to "Edit", edit_recipe_comments_path(@recipe, comment)%>
+    </div>
+</div>

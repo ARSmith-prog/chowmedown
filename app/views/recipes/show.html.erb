@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title%>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description%>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients%>
+</p>
+<p>
+  <strong>Directions:</strong>
+  <%= @recipe.directions%>
+</p>
+
+<div id="comments">
+  <h1>Comments</h1>
+
+  <%=  render @recipe.comments%>
+  <h2> Add a Comment</h2>
+  <%= render partial: "comments/form", locals: {comment: @recipe.comments.new}%>
+  </div>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), :class => "btn btn-primary btn-sm" %>
+<%= link_to 'Back', recipes_path, :class => "btn btn-primary btn-sm" %>
