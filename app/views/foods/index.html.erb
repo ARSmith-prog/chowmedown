@@ -1,0 +1,7 @@
+<h1>Your Food</h1>
+<p>Tell us what you already have in yout kitchen!</p>
+
+<%= form_for @food do |f| %>
+<div class="field">
+  <%= f.label :Vegetable %> <br />
+  <%= f.collection_check_boxes(:vegetable, {'carrots': 1, 'zuchini' :2, 'pumkin' :3}, left, first) %>
